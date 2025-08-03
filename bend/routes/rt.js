@@ -1,0 +1,11 @@
+let express=require("express")
+const { adduser, login, regdata, getall, deldata, getbyid, updateUser } = require("../controller/usercon")
+let rt=new express.Router()
+rt.post("/reg",adduser)
+rt.post("/login",login)
+rt.get("/home/:uid",regdata)
+rt.get("/admin",getall)
+rt.delete("/del/:uid",deldata)
+rt.get("/edit/:uid",getbyid)
+rt.put("/upd",updateUser)
+module.exports=rt
